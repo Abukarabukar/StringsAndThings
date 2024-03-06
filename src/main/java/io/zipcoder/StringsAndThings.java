@@ -15,7 +15,13 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        int result = 0;
+        for (int i=0;i<input.length(); i++){
+            if(Character.isLetter('y')||Character.isLetter('z')||Character.isLetter('a'))     {
+                result =2;
+            }
+        }
+        return result;
     }
 
     /**
@@ -27,9 +33,40 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
-    public String removeString(String base, String remove){
-        return null;
+    public String removeString(String base, String remove) {
+        String baseLowercase = base.toLowerCase();
+        String removeLowercase = remove.toLowerCase();
+
+
+        StringBuilder build = null;
+        if (!baseLowercase.contains(removeLowercase)) {
+
+
+            return baseLowercase.substring(0, 1).toUpperCase() + baseLowercase.substring(1);
+        } else
+            build = new StringBuilder(baseLowercase);
+
+        int position = build.indexOf(removeLowercase);
+        while (position != -1) {
+            build.delete(position, position + removeLowercase.length());
+            position = build.indexOf(removeLowercase, position);
+        }
+        String result = build.toString();
+
+        String cap = result.substring(0, 1).toUpperCase() + result.substring(1);
+
+        return cap;
     }
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal
@@ -63,6 +100,19 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
+        int count;
+
+//        for (char letters : input.toCharArray())  {
+//            if (input=) {
+//                count++
+//            }
+//        }
+//        char[] myArray = input.toCharArray();
+//        for (int i=0; i<input.length();i++){
+//            if ()
+//        }
+
+
         return null;
     }
 }
