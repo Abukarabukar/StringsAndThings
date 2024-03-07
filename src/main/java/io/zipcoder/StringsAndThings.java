@@ -76,9 +76,56 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+    public Boolean containsEqualNumberOfIsAndNot(String input) {
+//        String inputLowercase = input.toLowerCase();
+        int countIs = 0;
+        int countNot = 0;
+
+        for (int i = 0; i < input.length(); i++) {
+            if (i + 1 < input.length() && input.substring(i, i + 2).equals("is")) {
+                countIs++;
+            }
+            if (i + 2 < input.length() && input.substring(i, i + 3).equals("not")) {
+                countNot++;
+            }
+
+        }
+        return countIs == countNot;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        int countIs = 0;
+//        int countNot = 0;
+//
+//        for (int i = 0; i < input.length(); i++){
+//            if (i + 1 < input.length() && input.substring(i, i + 2).equals("is")){
+//                countIs++;
+//            }
+//            if (i + 2 <input.length() && input.substring(i, i + 3).equals("not")) {
+//                countNot++;
+//            }
+//
+//        }
+//        return countIs == countNot;
+//    }
+
 
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
