@@ -1,5 +1,6 @@
 package io.zipcoder;
 
+import java.util.regex.*;
 
 /**
  * @author tariq
@@ -62,12 +63,6 @@ public class StringsAndThings {
 
 
 
-
-
-
-
-
-
     /**
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal
      * to the number of appearances of "not" anywhere in the string (case sensitive)
@@ -97,36 +92,6 @@ public class StringsAndThings {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        int countIs = 0;
-//        int countNot = 0;
-//
-//        for (int i = 0; i < input.length(); i++){
-//            if (i + 1 < input.length() && input.substring(i, i + 2).equals("is")){
-//                countIs++;
-//            }
-//            if (i + 2 <input.length() && input.substring(i, i + 3).equals("not")) {
-//                countNot++;
-//            }
-//
-//        }
-//        return countIs == countNot;
-//    }
-
-
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
      * Return true if all the g's in the given string are happy.
@@ -135,8 +100,21 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
-    }
+                for (int i = 0; i < input.length(); i++){
+            if(input.charAt(i) == 'g') {
+                if (input.charAt(i - 1) != 'g' && input.charAt(i + 1) != 'g'){
+                    return false;
+                }
+            }
+
+        }
+                return true;
+                }
+
+
+
+
+
 
 
     /**
@@ -147,19 +125,18 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        int count;
+        int count = 0;
 
-//        for (char letters : input.toCharArray())  {
-//            if (input=) {
-//                count++
-//            }
-//        }
-//        char[] myArray = input.toCharArray();
-//        for (int i=0; i<input.length();i++){
-//            if ()
-//        }
+        // Iterate over the string, checking for triples
+        for (int i = 0; i < input.length() - 2; i++) {
+            char currentChar = input.charAt(i);
 
+            // Check if the current character appears three times consecutively
+            if (input.charAt(i + 1) == currentChar && input.charAt(i + 2) == currentChar) {
+                count++;
+            }
+        }
 
-        return null;
+        return count;
     }
 }
